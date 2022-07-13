@@ -16,14 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ovk-xD-38o">
-                                <rect key="frame" x="0.0" y="227" width="414" height="586"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbu-Mz-RCz">
+                                <rect key="frame" x="0.0" y="196" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Films"/>
+                                    <segment title="Serials"/>
+                                </segments>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Mfg-uH-CY7"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aZA-NK-VRM"/>
+                                    <action selector="segmentControllAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sxx-7k-aTL"/>
                                 </connections>
-                            </tableView>
+                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-ZZ-HTb">
                                 <rect key="frame" x="0.0" y="88" width="414" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,37 +45,58 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LY5-o2-2Vs"/>
                                 </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbu-Mz-RCz">
-                                <rect key="frame" x="0.0" y="196" width="414" height="32"/>
-                                <segments>
-                                    <segment title="Films"/>
-                                    <segment title="Serials"/>
-                                </segments>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BjG-A5-Ets">
+                                <rect key="frame" x="0.0" y="731" width="414" height="82"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
-                                    <action selector="segmentControllAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sxx-7k-aTL"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Bso-aI-PfO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HXg-Ed-2sR"/>
                                 </connections>
-                            </segmentedControl>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTD-Wc-UdW">
+                                <rect key="frame" x="0.0" y="227" width="414" height="504"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="504" id="7mh-1Y-dMR"/>
+                                    <constraint firstAttribute="width" constant="414" id="af9-is-zxT"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Icr-zH-lMK">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="p6r-sF-gce"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vA2-Yu-JYW"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tag-ZZ-HTb" secondAttribute="trailing" id="3xa-0Q-Kgv"/>
+                            <constraint firstItem="cTD-Wc-UdW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ecu-bo-zWY"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GiX-LA-R3N"/>
                             <constraint firstItem="Tag-ZZ-HTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JgU-5i-oAZ"/>
-                            <constraint firstItem="Ovk-xD-38o" firstAttribute="top" secondItem="fbu-Mz-RCz" secondAttribute="bottom" id="aHF-8H-znY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BjG-A5-Ets" secondAttribute="bottom" id="Jrl-V2-zG2"/>
+                            <constraint firstItem="cTD-Wc-UdW" firstAttribute="top" secondItem="fbu-Mz-RCz" secondAttribute="bottom" id="Rov-ht-dKP"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="top" secondItem="Tag-ZZ-HTb" secondAttribute="bottom" constant="8" symbolic="YES" id="gVW-bl-daG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ovk-xD-38o" secondAttribute="trailing" id="i6H-Cv-D7p"/>
-                            <constraint firstItem="Ovk-xD-38o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="puL-Ze-X15"/>
-                            <constraint firstItem="Ovk-xD-38o" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qnT-Ap-Xoz"/>
+                            <constraint firstItem="BjG-A5-Ets" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gyx-6S-lcK"/>
                             <constraint firstItem="Tag-ZZ-HTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZi-UQ-Pkr"/>
+                            <constraint firstItem="BjG-A5-Ets" firstAttribute="top" secondItem="cTD-Wc-UdW" secondAttribute="bottom" id="vLh-Io-dPV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BjG-A5-Ets" secondAttribute="trailing" id="xW6-q8-co4"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xgo-5C-2fh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTD-Wc-UdW" secondAttribute="trailing" id="zIF-kI-v7t"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bCK-hn-Zpd"/>
                     <connections>
-                        <outlet property="collectionView" destination="Tag-ZZ-HTb" id="M6t-XH-c8o"/>
+                        <outlet property="actorCollectionView" destination="Tag-ZZ-HTb" id="K8t-AF-5eT"/>
+                        <outlet property="filmsCollectionView" destination="cTD-Wc-UdW" id="ZzG-C1-uOa"/>
                         <outlet property="segmentControl" destination="fbu-Mz-RCz" id="gks-Au-DO9"/>
-                        <outlet property="tableView" destination="Ovk-xD-38o" id="GRT-Xu-GuZ"/>
+                        <outlet property="tableView" destination="BjG-A5-Ets" id="yCv-u6-DOC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -186,11 +209,11 @@
             </objects>
             <point key="canvasLocation" x="3721.739130434783" y="72.991071428571431"/>
         </scene>
-        <!--List of movies-->
+        <!--Navigation Controller-->
         <scene sceneID="rBE-tt-uS4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M6d-rt-qG9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List of movies" id="1Ua-2Y-aCH"/>
+                    <tabBarItem key="tabBarItem" selectedImage="list.dash" catalog="system" systemItem="recents" id="1Ua-2Y-aCH"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cud-dC-goH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -224,7 +247,7 @@
             </objects>
             <point key="canvasLocation" x="945" y="610"/>
         </scene>
-        <!--Watch later-->
+        <!--Watch Later View Controller-->
         <scene sceneID="TQn-X6-cGo">
             <objects>
                 <viewController id="sfb-xU-e8P" customClass="WatchLaterViewController" customModule="Lesson9_HW" customModuleProvider="target" sceneMemberID="viewController">
@@ -250,7 +273,7 @@
                             <constraint firstItem="gOm-m1-E49" firstAttribute="top" secondItem="6Nk-CF-IFu" secondAttribute="top" id="vpU-bf-mdk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Watch later" id="Ejr-Lp-A0F"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Ejr-Lp-A0F"/>
                     <connections>
                         <outlet property="tableView" destination="gOm-m1-E49" id="x2J-fy-VJI"/>
                     </connections>
@@ -261,6 +284,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
