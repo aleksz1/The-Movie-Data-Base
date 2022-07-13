@@ -24,6 +24,9 @@
 		2CBED608287C837800DA955E /* ActorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CBED606287C837700DA955E /* ActorCollectionViewCell.xib */; };
 		2CCEE11B287ECB6C004C21C5 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCEE119287ECB6B004C21C5 /* MainCollectionViewCell.swift */; };
 		2CCEE11C287ECB6C004C21C5 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCEE11A287ECB6B004C21C5 /* MainCollectionViewCell.xib */; };
+		2CD1E668287F25160029D5CA /* ActorResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD1E665287F25150029D5CA /* ActorResults.swift */; };
+		2CD1E669287F25160029D5CA /* ActorKnown_for.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD1E666287F25150029D5CA /* ActorKnown_for.swift */; };
+		2CD1E66A287F25160029D5CA /* ActorJson4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD1E667287F25160029D5CA /* ActorJson4Swift_Base.swift */; };
 		7AC575BAE0BDE3F463E47758 /* Pods_Lesson9_HW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FBFD4054ED97D5A84B71B6 /* Pods_Lesson9_HW.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		2CBED606287C837700DA955E /* ActorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActorCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CCEE119287ECB6B004C21C5 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CCEE11A287ECB6B004C21C5 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
+		2CD1E665287F25150029D5CA /* ActorResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorResults.swift; sourceTree = "<group>"; };
+		2CD1E666287F25150029D5CA /* ActorKnown_for.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorKnown_for.swift; sourceTree = "<group>"; };
+		2CD1E667287F25160029D5CA /* ActorJson4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorJson4Swift_Base.swift; sourceTree = "<group>"; };
 		B757887FAF55A0F14F1DF59B /* Pods-Lesson9_HW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson9_HW.debug.xcconfig"; path = "Target Support Files/Pods-Lesson9_HW/Pods-Lesson9_HW.debug.xcconfig"; sourceTree = "<group>"; };
 		C7FBFD4054ED97D5A84B71B6 /* Pods_Lesson9_HW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lesson9_HW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61C9AC306E6F4B8A339A735 /* Pods-Lesson9_HW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lesson9_HW.release.xcconfig"; path = "Target Support Files/Pods-Lesson9_HW/Pods-Lesson9_HW.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				2C85D4112874AD4E009C6197 /* TrendingMoviesViewController.swift */,
-				2C85D4212874AF0E009C6197 /* NerworkManager.swift */,
 				2C9B1BEE2874D28C00D61500 /* MovieDetailsViewController.swift */,
 				2CBED601287C287300DA955E /* WatchLaterViewController.swift */,
 				2C9B1BE92874BB9C00D61500 /* Cells */,
@@ -114,8 +119,12 @@
 		2C9B1BE42874B53F00D61500 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2CD1E667287F25160029D5CA /* ActorJson4Swift_Base.swift */,
+				2CD1E666287F25150029D5CA /* ActorKnown_for.swift */,
+				2CD1E665287F25150029D5CA /* ActorResults.swift */,
 				2C9B1BE62874B54800D61500 /* JSONResponce.swift */,
 				2C9B1BE52874B54800D61500 /* Results.swift */,
+				2C85D4212874AF0E009C6197 /* NerworkManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,9 +295,12 @@
 				2C85D4122874AD4E009C6197 /* TrendingMoviesViewController.swift in Sources */,
 				2CBED607287C837800DA955E /* ActorCollectionViewCell.swift in Sources */,
 				2C85D40E2874AD4E009C6197 /* AppDelegate.swift in Sources */,
+				2CD1E668287F25160029D5CA /* ActorResults.swift in Sources */,
+				2CD1E66A287F25160029D5CA /* ActorJson4Swift_Base.swift in Sources */,
 				2C85D4222874AF0F009C6197 /* NerworkManager.swift in Sources */,
 				2C85D4102874AD4E009C6197 /* SceneDelegate.swift in Sources */,
 				2CCEE11B287ECB6C004C21C5 /* MainCollectionViewCell.swift in Sources */,
+				2CD1E669287F25160029D5CA /* ActorKnown_for.swift in Sources */,
 				2C9B1BE72874B54800D61500 /* Results.swift in Sources */,
 				2CBED602287C287300DA955E /* WatchLaterViewController.swift in Sources */,
 				2C743918287C16D3003B8254 /* MovieRealm.swift in Sources */,

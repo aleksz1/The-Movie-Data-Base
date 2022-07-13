@@ -28,23 +28,22 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6Gm-6z-eur">
-                                <rect key="frame" x="0.0" y="160" width="200" height="40"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="8" y="162" width="184" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="dPp-1I-QBh"/>
-                                    <constraint firstAttribute="width" constant="200" id="xe7-Ae-z4N"/>
+                                    <constraint firstAttribute="height" constant="30" id="dPp-1I-QBh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="6Gm-6z-eur" secondAttribute="bottom" id="4qD-nk-QGB"/>
-                            <constraint firstAttribute="trailing" secondItem="6Gm-6z-eur" secondAttribute="trailing" id="7JC-x5-Uk0"/>
-                            <constraint firstItem="6Gm-6z-eur" firstAttribute="leading" secondItem="GHF-cr-ZxJ" secondAttribute="leading" id="Hzd-rZ-QIA"/>
+                            <constraint firstAttribute="bottom" secondItem="6Gm-6z-eur" secondAttribute="bottom" constant="8" id="4qD-nk-QGB"/>
+                            <constraint firstAttribute="trailing" secondItem="6Gm-6z-eur" secondAttribute="trailing" constant="8" id="7JC-x5-Uk0"/>
+                            <constraint firstItem="6Gm-6z-eur" firstAttribute="leading" secondItem="GHF-cr-ZxJ" secondAttribute="leading" constant="8" id="Hzd-rZ-QIA"/>
                             <constraint firstItem="dwT-P2-7z6" firstAttribute="leading" secondItem="GHF-cr-ZxJ" secondAttribute="leading" id="U6q-fw-FdP"/>
                             <constraint firstItem="dwT-P2-7z6" firstAttribute="top" secondItem="GHF-cr-ZxJ" secondAttribute="top" id="owS-8N-4Hu"/>
                             <constraint firstAttribute="trailing" secondItem="dwT-P2-7z6" secondAttribute="trailing" id="pfF-Ql-s7N"/>

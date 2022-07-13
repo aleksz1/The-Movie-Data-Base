@@ -20,7 +20,6 @@ class MainCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         containerViewCell.layer.cornerRadius = 30
         posterImageView.layer.cornerRadius = 30
-        textLabel.layer.cornerRadius = 20
     }
     
     func configureWith(_ item: Movie) {

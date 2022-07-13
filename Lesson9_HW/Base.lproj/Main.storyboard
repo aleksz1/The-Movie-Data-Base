@@ -16,25 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbu-Mz-RCz">
-                                <rect key="frame" x="0.0" y="196" width="414" height="32"/>
-                                <segments>
-                                    <segment title="Films"/>
-                                    <segment title="Serials"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentControllAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sxx-7k-aTL"/>
-                                </connections>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-ZZ-HTb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="115"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Shw-7A-LAW"/>
+                                    <constraint firstAttribute="width" constant="414" id="s61-3o-39j"/>
+                                    <constraint firstAttribute="height" constant="115" id="tdS-0y-Cdl"/>
                                 </constraints>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="300" maxX="0.0" maxY="0.0"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S42-oW-C8O">
-                                    <size key="itemSize" width="128" height="84"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S42-oW-C8O">
+                                    <size key="itemSize" width="100" height="115"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
@@ -46,8 +37,8 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTD-Wc-UdW">
-                                <rect key="frame" x="0.0" y="227" width="414" height="586"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="262" width="414" height="586"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="586" id="7mh-1Y-dMR"/>
                                     <constraint firstAttribute="width" constant="414" id="af9-is-zxT"/>
@@ -64,17 +55,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vA2-Yu-JYW"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fbu-Mz-RCz">
+                                <rect key="frame" x="0.0" y="223" width="414" height="32"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Films"/>
+                                    <segment title="Serials"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentControllAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="Sxx-7k-aTL"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tag-ZZ-HTb" secondAttribute="trailing" id="3xa-0Q-Kgv"/>
+                            <constraint firstItem="cTD-Wc-UdW" firstAttribute="top" secondItem="fbu-Mz-RCz" secondAttribute="bottom" constant="8" symbolic="YES" id="1OL-jY-9FR"/>
+                            <constraint firstItem="Tag-ZZ-HTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CR6-rE-s19"/>
                             <constraint firstItem="cTD-Wc-UdW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ecu-bo-zWY"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GiX-LA-R3N"/>
-                            <constraint firstItem="Tag-ZZ-HTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JgU-5i-oAZ"/>
-                            <constraint firstItem="cTD-Wc-UdW" firstAttribute="top" secondItem="fbu-Mz-RCz" secondAttribute="bottom" id="Rov-ht-dKP"/>
-                            <constraint firstItem="fbu-Mz-RCz" firstAttribute="top" secondItem="Tag-ZZ-HTb" secondAttribute="bottom" constant="8" symbolic="YES" id="gVW-bl-daG"/>
-                            <constraint firstItem="Tag-ZZ-HTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZi-UQ-Pkr"/>
+                            <constraint firstItem="Tag-ZZ-HTb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cHC-Wc-NaI"/>
+                            <constraint firstItem="fbu-Mz-RCz" firstAttribute="top" secondItem="Tag-ZZ-HTb" secondAttribute="bottom" constant="20" id="oDP-Mc-p7c"/>
+                            <constraint firstItem="Tag-ZZ-HTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vd6-Ks-jjK"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xgo-5C-2fh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTD-Wc-UdW" secondAttribute="trailing" id="zIF-kI-v7t"/>
                         </constraints>
@@ -100,18 +103,18 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Opo-Py-0d9">
                                 <rect key="frame" x="88" y="252" width="238" height="20.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-4h-v4r">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="clip" numberOfLines="8" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-4h-v4r">
                                 <rect key="frame" x="0.0" y="292.5" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="i6o-lV-XyS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLX-8C-c77">
@@ -121,12 +124,12 @@
                                     <constraint firstAttribute="width" constant="100" id="jUQ-Q7-QnS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sW-iq-Ge6">
                                 <rect key="frame" x="314" y="357.5" width="100" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="6ss-7U-X1H"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7uP-ow-vYA"/>
@@ -134,7 +137,7 @@
                                     <constraint firstAttribute="width" constant="100" id="u5s-KR-Lwf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8le-7V-oRL">
@@ -159,7 +162,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aYf-DW-KUT"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cYv-Zy-tDY" firstAttribute="leading" secondItem="aYf-DW-KUT" secondAttribute="leading" id="7Zt-rp-ohH"/>
                             <constraint firstItem="cYv-Zy-tDY" firstAttribute="top" secondItem="aYf-DW-KUT" secondAttribute="top" id="Dkx-a5-fMd"/>
@@ -205,6 +208,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cud-dC-goH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -223,7 +231,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6RV-GJ-dbW">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="M6d-rt-qG9" kind="relationship" relationship="viewControllers" id="wuy-7x-ef0"/>

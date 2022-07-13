@@ -9,6 +9,7 @@ class TrendingMoviesViewController: UIViewController {
     
     var moviesList: [Movie] = []
     var serialsList: [Movie] = []
+    var personList: [Actor] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +19,21 @@ class TrendingMoviesViewController: UIViewController {
         self.moviesList = moviesList
         self.filmsCollectionView.reloadData()
         })
-        self.title = "Movies list"
         NetworkManager.shared.reguestTrendingSerials(completion: {serialsList in
         self.serialsList = serialsList
+        })
+        NetworkManager.shared.reguestTrendingPerson(completion: {personsList in
+        self.personList = personsList
+        self.actorCollectionView.reloadData()
+        })
+        self.title = "Movies list"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.reguestTrendingPerson(completion: {personsList in
+            self.personList = personsList
+            self.actorCollectionView.reloadData()
         })
     }
     
@@ -46,15 +59,15 @@ class TrendingMoviesViewController: UIViewController {
 extension TrendingMoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (collectionView == actorCollectionView) {
-            return 10
-        }
+            if (collectionView == filmsCollectionView) {
         return moviesList.count
+        }
+        return personList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellActor = actorCollectionView.dequeueReusableCell(withReuseIdentifier: "ActorCollectionViewCell", for: indexPath) as! ActorCollectionViewCell
-        cellActor.configure()
+        cellActor.configureWith(personList[indexPath.row])
         if (collectionView == filmsCollectionView) {
             let cellFilms = filmsCollectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
             cellFilms.configureWith(moviesList[indexPath.row])
