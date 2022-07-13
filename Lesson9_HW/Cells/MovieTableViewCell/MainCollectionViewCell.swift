@@ -18,12 +18,14 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-     
+        containerViewCell.layer.cornerRadius = 30
+        posterImageView.layer.cornerRadius = 30
+        textLabel.layer.cornerRadius = 20
     }
-
+    
     func configureWith(_ item: Movie) {
-//        posterImageView.layer.cornerRadius = 150
-        textLabel.text = item.title
+        
+        textLabel.text = item.title ?? item.originalName
         var imageUrlString = ""
         if let backdropPath = item.backdropPath{
             imageUrlString = "https://image.tmdb.org/t/p/w500/" + backdropPath

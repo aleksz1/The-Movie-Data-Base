@@ -45,19 +45,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="LY5-o2-2Vs"/>
                                 </connections>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BjG-A5-Ets">
-                                <rect key="frame" x="0.0" y="731" width="414" height="82"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Bso-aI-PfO"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HXg-Ed-2sR"/>
-                                </connections>
-                            </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTD-Wc-UdW">
-                                <rect key="frame" x="0.0" y="227" width="414" height="504"/>
+                                <rect key="frame" x="0.0" y="227" width="414" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="504" id="7mh-1Y-dMR"/>
+                                    <constraint firstAttribute="height" constant="586" id="7mh-1Y-dMR"/>
                                     <constraint firstAttribute="width" constant="414" id="af9-is-zxT"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Icr-zH-lMK">
@@ -80,13 +72,9 @@
                             <constraint firstItem="cTD-Wc-UdW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ecu-bo-zWY"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GiX-LA-R3N"/>
                             <constraint firstItem="Tag-ZZ-HTb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JgU-5i-oAZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BjG-A5-Ets" secondAttribute="bottom" id="Jrl-V2-zG2"/>
                             <constraint firstItem="cTD-Wc-UdW" firstAttribute="top" secondItem="fbu-Mz-RCz" secondAttribute="bottom" id="Rov-ht-dKP"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="top" secondItem="Tag-ZZ-HTb" secondAttribute="bottom" constant="8" symbolic="YES" id="gVW-bl-daG"/>
-                            <constraint firstItem="BjG-A5-Ets" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gyx-6S-lcK"/>
                             <constraint firstItem="Tag-ZZ-HTb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rZi-UQ-Pkr"/>
-                            <constraint firstItem="BjG-A5-Ets" firstAttribute="top" secondItem="cTD-Wc-UdW" secondAttribute="bottom" id="vLh-Io-dPV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BjG-A5-Ets" secondAttribute="trailing" id="xW6-q8-co4"/>
                             <constraint firstItem="fbu-Mz-RCz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xgo-5C-2fh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTD-Wc-UdW" secondAttribute="trailing" id="zIF-kI-v7t"/>
                         </constraints>
@@ -96,7 +84,6 @@
                         <outlet property="actorCollectionView" destination="Tag-ZZ-HTb" id="K8t-AF-5eT"/>
                         <outlet property="filmsCollectionView" destination="cTD-Wc-UdW" id="ZzG-C1-uOa"/>
                         <outlet property="segmentControl" destination="fbu-Mz-RCz" id="gks-Au-DO9"/>
-                        <outlet property="tableView" destination="BjG-A5-Ets" id="yCv-u6-DOC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -250,7 +237,7 @@
         <!--Watch Later View Controller-->
         <scene sceneID="TQn-X6-cGo">
             <objects>
-                <viewController id="sfb-xU-e8P" customClass="WatchLaterViewController" customModule="Lesson9_HW" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatchLaterViewController" id="sfb-xU-e8P" customClass="WatchLaterViewController" customModule="Lesson9_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3uw-1X-jPl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

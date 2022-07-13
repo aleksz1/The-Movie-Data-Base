@@ -28,6 +28,7 @@ struct NetworkManager {
     
     func reguestTrendingSerials(completion: @escaping(([Movie]) -> ())){
         let url = "https://api.themoviedb.org/3/trending/tv/week?api_key=99709c91f79d11764afb7ab67218f012"
+        
         AF.request(url).responseJSON { responce in
             let decoder = JSONDecoder()
             if let data = try? decoder.decode(JSONResponce.self, from: responce.data!) {
