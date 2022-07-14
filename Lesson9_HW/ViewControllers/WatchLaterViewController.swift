@@ -15,7 +15,7 @@ class WatchLaterViewController: UIViewController {
     }
     
     func getMovies() -> [MovieRealm] {
-        
+
         var movies = [MovieRealm]()
         guard let filmsResults = realm?.objects(MovieRealm.self) else {return [] }
         for movie in filmsResults {

@@ -7,12 +7,10 @@ class TrendingMoviesViewController: UIViewController {
     @IBOutlet weak var actorCollectionView: UICollectionView!
     @IBOutlet weak var filmsCollectionView: UICollectionView!
     
-    
     var moviesList: [Movie] = []
     var serialsList: [Movie] = []
     var personList: [Actor] = []
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.actorCollectionView.register(UINib(nibName: "ActorCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ActorCollectionViewCell")
@@ -58,11 +56,11 @@ class TrendingMoviesViewController: UIViewController {
 extension TrendingMoviesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            if (collectionView == filmsCollectionView) {
-           return moviesList.count
-           }
-           return personList.count
-           }
+        if (collectionView == filmsCollectionView) {
+            return moviesList.count
+        }
+            return personList.count
+        }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellActor = actorCollectionView.dequeueReusableCell(withReuseIdentifier: "ActorCollectionViewCell", for: indexPath) as! ActorCollectionViewCell
@@ -83,5 +81,5 @@ extension TrendingMoviesViewController: UICollectionViewDataSource, UICollection
         navigationController?.pushViewController(detailsViewController, animated: true)
         }
     }
-    }
+}
 

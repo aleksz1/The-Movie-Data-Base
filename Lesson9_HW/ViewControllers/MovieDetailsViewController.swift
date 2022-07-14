@@ -17,11 +17,9 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionMovieLabel: UILabel!
     @IBOutlet weak var ratingMovieLabel: UILabel!
     @IBOutlet weak var releaseMovieLabel: UILabel!
-    
-    
+
     var movie: Movie?
     var serial: Movie?
-    
     let realm = try? Realm()
    
     override func viewDidLoad() {
