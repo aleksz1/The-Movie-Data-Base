@@ -17,7 +17,6 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionMovieLabel: UILabel!
     @IBOutlet weak var ratingMovieLabel: UILabel!
     @IBOutlet weak var releaseMovieLabel: UILabel!
-    @IBOutlet weak var videoPlayerView: YTPlayerView!
     
     
     var movie: Movie?
@@ -28,7 +27,6 @@ class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFilms()
-        self.videoPlayerView.load(withVideoId: "VVnZd8A84z4")
     }
     
     func loadFilms() {

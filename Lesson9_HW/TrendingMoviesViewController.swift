@@ -2,38 +2,37 @@ import UIKit
 import RealmSwift
 
 class TrendingMoviesViewController: UIViewController {
-    
+     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var actorCollectionView: UICollectionView!
     @IBOutlet weak var filmsCollectionView: UICollectionView!
     
+    
     var moviesList: [Movie] = []
     var serialsList: [Movie] = []
     var personList: [Actor] = []
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.actorCollectionView.register(UINib(nibName: "ActorCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ActorCollectionViewCell")
         self.filmsCollectionView.register(UINib(nibName: "MainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MainCollectionViewCell")
+        self.title = "Movies list"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NetworkManager.shared.reguestTrendingPerson(completion: { actorsList in
+            self.personList = actorsList
+            self.actorCollectionView.reloadData()
+            self.filmsCollectionView.reloadData()
+        })
         NetworkManager.shared.reguestTrendingMovies(completion: { moviesList in
         self.moviesList = moviesList
         self.filmsCollectionView.reloadData()
         })
         NetworkManager.shared.reguestTrendingSerials(completion: {serialsList in
         self.serialsList = serialsList
-        })
-        NetworkManager.shared.reguestTrendingPerson(completion: {personsList in
-        self.personList = personsList
-        self.actorCollectionView.reloadData()
-        })
-        self.title = "Movies list"
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NetworkManager.shared.reguestTrendingPerson(completion: {personsList in
-            self.personList = personsList
-            self.actorCollectionView.reloadData()
         })
     }
     
@@ -60,21 +59,21 @@ extension TrendingMoviesViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             if (collectionView == filmsCollectionView) {
-        return moviesList.count
-        }
-        return personList.count
-    }
+           return moviesList.count
+           }
+           return personList.count
+           }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellActor = actorCollectionView.dequeueReusableCell(withReuseIdentifier: "ActorCollectionViewCell", for: indexPath) as! ActorCollectionViewCell
-        cellActor.configureWith(personList[indexPath.row])
-        if (collectionView == filmsCollectionView) {
-            let cellFilms = filmsCollectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
-            cellFilms.configureWith(moviesList[indexPath.row])
-            return cellFilms
-        }
-        return cellActor
-    }
+                cellActor.configureWith(personList[indexPath.row])
+                if (collectionView == filmsCollectionView) {
+                    let cellFilms = filmsCollectionView.dequeueReusableCell(withReuseIdentifier: "MainCollectionViewCell", for: indexPath) as! MainCollectionViewCell
+                    cellFilms.configureWith(moviesList[indexPath.row])
+                    return cellFilms
+                }
+                return cellActor
+            }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = moviesList[indexPath.row]
@@ -84,4 +83,5 @@ extension TrendingMoviesViewController: UICollectionViewDataSource, UICollection
         navigationController?.pushViewController(detailsViewController, animated: true)
         }
     }
-}
+    }
+

@@ -10,7 +10,6 @@ class WatchLaterViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.movies = self.getMovies()
         tableView.reloadData()
     }
