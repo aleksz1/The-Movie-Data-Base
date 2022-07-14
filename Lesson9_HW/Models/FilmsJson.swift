@@ -1,6 +1,6 @@
 import Foundation
 
-struct JSONResponce : Codable {
+struct filmsJson : Codable {
 	let page : Int?
 	let results : [Movie]?
 	let totalPages : Int?
